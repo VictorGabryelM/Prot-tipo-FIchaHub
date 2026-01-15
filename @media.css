@@ -1,0 +1,17 @@
+@media (max-width: 768px) {
+    .all-design {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .queue2 .box {
+        margin-left: 17px;
+    }
+    .queue1 .box .content {
+        margin-left: 10px;
+    }
+    .box1 {
+        margin-left: -5px;
+    }
+}
+  
