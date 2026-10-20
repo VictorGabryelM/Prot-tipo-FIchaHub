@@ -29,10 +29,10 @@ body {
 .content .title {
     color: white;
     font-weight: 700;
+    font-size: 25px;
 }
 
 .content .about {
-    margin-top: -21px;
     width: 305px;
     height: 200px;
     color: #bdbed6;
@@ -49,8 +49,6 @@ body {
 }
 
 .queue1 .box .content {
-    margin-left: 20px;
-    margin-top: -25px;
    font-family: var(--font-dm-sans);
 }
 .box1 {
@@ -79,6 +77,9 @@ body {
     justify-content: space-between;
     padding: 20px;
     margin-top: -40px;
+}
+.hub {
+    display: none;
 }
 
 .queue1 .categories h1 {
@@ -168,4 +169,52 @@ body {
 
 .credit a:hover {
     text-decoration: underline;
+}
+
+.back-button {
+    background: none;
+}
+
+.back-button.ativo {
+    background-color: #2f445d;
+}
+
+.box-cam {
+    display: none;
+}
+
+/* From Uiverse.io by Jedi-hongbin */ 
+.voltar-button {
+ display: flex;
+ margin-top: 20px;
+ height: 3em;
+ width: 100px;
+ align-items: center;
+ justify-content: center;
+ background-color: #eeeeee4b;
+ border-radius: 3px;
+ letter-spacing: 1px;
+ transition: all 0.2s linear;
+ cursor: pointer;
+ border: none;
+ background: #3f536b;
+ color: #fff;
+}
+
+.voltar-button > svg {
+ margin-right: 5px;
+ margin-left: 5px;
+ font-size: 20px;
+ transition: all 0.4s ease-in;
+
+}
+
+.voltar-button:hover > svg {
+ font-size: 1.2em;
+ transform: translateX(-5px);
+}
+
+.voltar-button:hover {
+ box-shadow: 9px 9px 33px #21344c, -9px -9px 33px #3f536b;
+ transform: translateY(-2px);
 }

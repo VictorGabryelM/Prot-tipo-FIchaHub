@@ -11,27 +11,40 @@
 </head>
 <body>
     <div class="all-design">
+        <button class="voltar-button">
+        <svg height="16" width="16" fill="white" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024"><path d="M874.690416 495.52477c0 11.2973-9.168824 20.466124-20.466124 20.466124l-604.773963 0 188.083679 188.083679c7.992021 7.992021 7.992021 20.947078 0 28.939099-4.001127 3.990894-9.240455 5.996574-14.46955 5.996574-5.239328 0-10.478655-1.995447-14.479783-5.996574l-223.00912-223.00912c-3.837398-3.837398-5.996574-9.046027-5.996574-14.46955 0-5.433756 2.159176-10.632151 5.996574-14.46955l223.019353-223.029586c7.992021-7.992021 20.957311-7.992021 28.949332 0 7.992021 8.002254 7.992021 20.957311 0 28.949332l-188.073446 188.073446 604.753497 0C865.521592 475.058646 874.690416 484.217237 874.690416 495.52477z"></path></svg>
+        <span>Back</span>
+        </button>
         <div class="queue1">
             <div class="box">
                 <div>
-                    <img src="img/s24.png" alt="GaLaXy24">
+                    <img id="img" alt="GaLaXy24">
+                    <div><button onclick="mudarCor(0)"></button>
+                    <button onclick="mudarCor(1)"></button>
+                    <button onclick="mudarCor(2)"></button>
+                    <button onclick="mudarCor(3)"></button>
+                </div>
                 </div>
                 <div class="content">
-                    <h1 class="title">Samsung Galaxy S24</h1>
+                    <h1 id="mark" style="font-size: 18px;color: #fff;"></h1>
+                    <div class="title"><h1 id="name"><h1 id="generation" style="margin-left: 5px; color: var(--color);"></h1></h1></div>
+                    
+                    <h1 id="premium" id="color" style="font-size: 18px; color: var(--color);"></h1>
                     <div class="about">
-                        <p>O Galaxy S24 é o mais recente lançamento da Samsung na categoria de smartphones premium.
-                            Ele traz um processador ainda mais poderoso, garantindo alto desempenho e eficiência energética.
-                            Sua tela Dynamic AMOLED 2X foi aprimorada, oferecendo maior brilho e qualidade de imagem impressionante.
-                            As câmeras contam com inteligência artificial para capturar fotos e vídeos de nível profissional, mesmo em ambientes com pouca luz.
-                            Além disso, o design refinado e o acabamento premium tornam o dispositivo elegante e moderno.
-                            Com suporte a 5G, o Galaxy S24 oferece conectividade ultrarrápida, combinando inovação, estilo e desempenho de ponta.
-                            </p>
+                        <p id="about"></p>
                     </div>
                 </div>
             </div>
             <div class="box1">
+                <div class="hub">
+                    <button class="back-button" onclick="alternar(this)" id="back-button-general" style="background-color: #2f445d;"><img src="img/icons/icone_1.png"></button>
+                    <button class="back-button" onclick="alternar(this)" id="back-button-screen"><img src="img/icons/icone_2.png"></button>
+                    <button class="back-button" onclick="alternar(this)" id="back-button-hardware"><img src="img/icons/icone_3.png"></button>
+                    <button class="back-button" onclick="alternar(this)" id="back-button-camera"><img src="img/icons/icone_4.png"></button>
+                    <button class="back-button" onclick="alternar(this)" id="back-button-record"><img src="img/icons/icone_5.png"></button>
+                </div>
                 <h1 class="title">Geral</h1>
-                <div class="about">
+                <div class="about" id="about1">
                     <div class="categories">
                         <h1>Bateria</h1>
                         <h1>USB</h1>
@@ -39,10 +52,10 @@
                         <h1>Bluetooth</h1>
                     </div>
                     <div class="text">
-                        <h1>4.000 mAh</h1>
-                        <h1 style="margin-top: 20px;">Tipo-C 3.2</h1>
-                        <h1 style="margin-top: 20px;">6/6e</h1>
-                        <h1 style="margin-top: 20px;">5.3</h1>
+                        <h1 id="battery"></h1>
+                        <h1 style="margin-top: 20px;" id="usb"></h1>
+                        <h1 style="margin-top: 20px;" id="wifi"></h1>
+                        <h1 style="margin-top: 20px;" id="bluetooth"></h1>
                     </div>
                     <div class="bar"></div>
                     <div class="categories">
@@ -52,12 +65,85 @@
                         <h1>NFC</h1>
                     </div>
                     <div class="text">
-                        <h1 style="margin-top: 0px;">Gorilla Glass Victus 2</h1>
-                        <h1 style="margin-top: 13px;">1.639.695</h1>
-                        <h1 style="margin-top: 20px;">IP68</h1>
-                        <h1 style="margin-top: 20px;">Sim</h1>
+                        <h1 style="margin-top: 0px;" id="screen"></h1>
+                        <h1 style="margin-top: 13px;" id="antutu"></h1>
+                        <h1 style="margin-top: 20px;" id="certification"></h1>
+                        <h1 style="margin-top: 20px;" id="nfc"></h1>
                     </div>
                 </div>
+
+                <div class="about2" id="about2" style="display: none; margin-top: -20px;">
+                    <div class="teste">
+                        <h1 class="categories">Tipo da Tela</h1>
+                        <div><h1 id="screentype"></h1></div>
+                    </div>
+                    <div class="teste">
+                        <h1 class="categories">Resolução</h1>
+                        <div><h1 id="resolution"></h1></div>
+                    </div>
+                    <div class="teste">
+                        <h1 class="categories">Tx. de Atualiz.</h1>
+                        <div><h1 id="refreshrate"></h1></div>
+                    </div>
+                    <div class="teste">
+                        <h1 class="categories">Polegadas</h1>
+                        <div><h1 id="inches"></h1></div>
+                    </div>
+                </div>
+
+                <div class="about2" id="about3" style="display: none; margin-top: -20px;">
+                    <div class="teste">
+                        <h1 class="categories">GPU</h1>
+                        <div><h1 id="processor"></h1></div>
+                    </div>
+                    <div class="teste">
+                        <h1 class="categories">GPU</h1>
+                        <div><h1 id="gpu"></h1></div>
+                    </div>
+                    <div class="teste">
+                        <h1 class="categories">Armaz. Max</h1>
+                        <div><h1 id="rom"></h1></div>
+                    </div>
+                    <div class="teste">
+                        <h1 class="categories">RAM Max</h1>
+                        <div><h1 id="ram"></h1></div>
+                    </div>
+                </div>
+
+                <div class="about2" id="about4" style="display: none; margin-top: -20px;">
+                    <div class="teste">
+                        <h1 class="categories">Principal</h1>
+                        <div><h1 id="cam_main"></h1></div>
+                    </div>
+                    <div class="teste">
+                        <h1 class="categories">Ultra Wide</h1>
+                        <div><h1 id="ultrawide_cam"></h1></div>
+                    </div>
+                    <div class="teste">
+                        <h1 class="categories">Zoom Óptico</h1>
+                        <div><h1 id="opticalzoom_cam"></h1></div>
+                    </div>
+                    <div class="teste">
+                        <h1 class="categories">Frontal</h1>
+                        <div><h1 id="cam_front"></h1></div>
+                    </div>
+                </div>
+
+                <div class="about2" id="about5" style="display: none; margin-top: -20px;">
+                    <div class="teste">
+                        <h1 class="categories">Principal</h1>
+                        <div><h1 id="record_main"></h1></div>
+                    </div>
+                    <div class="teste">
+                        <h1 class="categories">Frontal</h1>
+                        <div><h1 id="record_front"></h1></div>
+                    </div>
+                    <div class="teste">
+                        <h1 class="categories">Zoom</h1>
+                        <div><h1 id="zoom_record"></h1></div>
+                    </div>
+                </div>
+
             </div>
         </div>
         <div class="queue2">
@@ -72,10 +158,10 @@
                             <h1 style="margin-top: 16px;">Polegadas</h1>
                         </div>
                         <div class="text" style="margin-left: 10px;">
-                            <h1 style="margin-top: -3px;">Dynamic AMOLED 2X</h1>
-                            <h1 style="margin-top: 15px;">1080 x 2340</h1>
-                            <h1 style="margin-top: 25px;">120 Hz</h1>
-                            <h1 style="margin-top: 25px;">6.2</h1>
+                            <h1 style="margin-top: -3px;" id="screentype"></h1>
+                            <h1 style="margin-top: 15px;" id="resolution"></h1>
+                            <h1 style="margin-top: 25px;" id="refreshrate"></h1>
+                            <h1 style="margin-top: 25px;" id="inches"></h1>
                         </div>
                     </div>
                 </div>
@@ -90,11 +176,11 @@
                             <h1 style="margin-top: -5px;">RAM Max</h1>
                         </div>
                         <div class="text" style="margin-left: 10px;">
-                            <h1 style="margin-top: 5px;">Enynos 2400</h1>
-                            <h1 style="margin-top: 15px;">Xclipse 940</h1>
-                            <h1 style="margin-top: 10px;">10 Núcleos</h1>
-                            <h1 style="margin-top: 13px;">512 GB</h1>
-                            <h1 style="margin-top: 10px;">8 Gb</h1>
+                            <h1 style="margin-top: 5px;" id="processor"></h1>
+                            <h1 style="margin-top: 15px;" id="gpu"></h1>
+                            <h1 style="margin-top: 10px;" id="cpu"></h1>
+                            <h1 style="margin-top: 13px;" id="rom"></h1>
+                            <h1 style="margin-top: 10px;" id="ram"></h1>
                         </div>
                     </div>
                 </div>
@@ -110,10 +196,10 @@
                             <h1 style="margin-top: 16px;">Frontal</h1>
                         </div>
                         <div class="text" style="margin-left: 10px;">
-                            <h1 style="margin-top: 5px;">50 MP f/1.8</h1>
-                            <h1 style="margin-top: 25px;">12 MP f/2.2</h1>
-                            <h1 style="margin-top: 24px;">10 MP f/2.4</h1>
-                            <h1 style="margin-top: 24px;">12 MP f/2.2</h1>
+                            <h1 style="margin-top: 5px;" id="cam_main"></h1>
+                            <h1 style="margin-top: 25px;" id="ultrawide_cam"></h1>
+                            <h1 style="margin-top: 24px;" id="opticalzoom_cam"></h1>
+                            <h1 style="margin-top: 24px;" id="cam_front"></h1>
                         </div>
                     </div>
                 </div>
@@ -126,17 +212,58 @@
                             <h1 style="margin-top: 30px;">Zoom</h1>
                         </div>
                         <div class="text" style="margin-left: 10px;">
-                            <h1 style="margin-top: 6px;">8K a 30 FPS</h1>
-                            <h1 style="margin-top: 37px;">4K a 60 FPS</h1>
-                            <h1 style="margin-top: 38px;">Óptico</h1>
+                            <h1 style="margin-top: 6px;" id="record_main"></h1>
+                            <h1 style="margin-top: 37px;" id="zoom_record"></h1>
+                            <h1 style="margin-top: 38px;" id="record_front"></h1>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="box-cam">
+            <img id="cam-phone-img">
+            <div class="div-box">
+                <img id="cam--4">
+                <div>
+                    <h1 id="text1-cam--4" style="font-size: 20px;"></h1>
+                    <h1 id="text2-cam--4" styles="margin-top: -10px"></h1>
+                </div>
+            </div>
+            <div class="div-box">
+                <img id="cam--3">
+                <div>
+                    <h1 id="text1-cam--3" style="font-size: 20px;"></h1>
+                    <h1 id="text2-cam--3" styles="margin-top: -10px"></h1>
+                </div>
+            </div>
+            <div class="div-box">
+                <img id="cam--2">
+                <div>
+                    <h1 id="text1-cam--2" style="font-size: 20px;"></h1>
+                    <h1 id="text2-cam--2" styles="margin-top: -10px"></h1>
+                </div>
+            </div>
+            <div class="div-box">
+                <img id="cam--1">
+                <div>
+                    <h1 id="text1-cam--1" style="font-size: 20px;"></h1>
+                    <h1 id="text2-cam--1" styles="margin-top: -10px"></h1>
+                </div>
+            </div>
+        </div>
     </div>
-    <footer class="credit">
+    <div class="photos">
+        <img src="img/photos/18promax/Principal.jpg">
+        <div class="hub">
+            <button class="back-button" onclick="alternar(this)" id="back-button-general" style="background-color: #2f445d;">Ultra Wide</button>
+            <button class="back-button" onclick="alternar(this)" id="back-button-screen">Principal</button>
+            <button class="back-button" onclick="alternar(this)" id="back-button-hardware">Teleobjetiva</button>
+            <button class="back-button" onclick="alternar(this)" id="back-button-camera">Frontal</button>
+        </div>
+    </div>
+    <footer class="credit" style="margin-top: 800px;">
         <p>Desenvolvido por <a href="https://github.com/VictorGabryelM" target="_blank">Victor Gabryel</a></p>
     </footer>
     </body>
+    <script src="scripts.js"></script>
 </html>
